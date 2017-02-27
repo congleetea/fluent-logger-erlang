@@ -1,12 +1,8 @@
-{application, fluent,
- [
-  {description, "fluent-logger-erlang"},
-  {vsn, git},
-  {registered, []},
-  {applications, [
-                  kernel,
-                  stdlib
-                 ]},
-  {mod, { fluent_app, []}},
-  {env, []}
- ]}.
+{application,fluent,
+             [{description,"fluent-logger-erlang"},
+              {vsn,"git"},
+              {registered,[]},
+              {applications,[kernel,stdlib, msgpack]},
+              {mod,{fluent_app,[]}},
+              {env,[]},
+              {modules,[]}]}.

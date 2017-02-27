@@ -32,6 +32,6 @@ In `app.config` or `sys.config`:
 ```erl
 {lager, [
   {handlers, [
-     {fluent_event, {yourappname, hostname, 24224}}
+     {fluent_event, [{yourappname::atom(), hostname, 24224}]}
 ]}]},
 ```

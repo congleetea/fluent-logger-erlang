@@ -41,8 +41,8 @@ add_handler(Tag,Host,Port) ->
 %% @private
 %% Whenever a new event handler is added to an event manager,
 %% this function is called to initialize the event handler.
--spec init({atom(),inet:host(),inet:port_number()}) -> {ok, #state{}}.
-init({Tag,Host,Port}) when is_atom(Tag) ->
+-spec init([{atom(),inet:host(),inet:port_number()}]) -> {ok, #state{}}.
+init([{Tag,Host,Port}]) when is_atom(Tag) ->
     {ok,S} = gen_tcp:connect(Host,Port,[binary,{packet,0}]),
     TagBD = <<(atom_to_binary(Tag, latin1))/binary, ".">>,
     {ok,#state{tag=Tag,tagbd=TagBD,host=Host,port=Port,sock=S}};
